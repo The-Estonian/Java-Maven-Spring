@@ -1,17 +1,21 @@
 package com.guessing;
 
+import java.util.Random;
+
 public class GuessingGame {
 
+    private final int randomNumber = new Random().nextInt(10);
+
     public String guess(int num) {
-        if (num < 0) {
-            return "You didn't get it!";
-        } else {
+        if (num == getRandomNumber()) {
             return "You got it!";
+        } else {
+            return "You didn't get it!";
         }
 
     }
 
     public int getRandomNumber() {
-        return (int) (Math.random() * 10);
+        return randomNumber;
     }
 }
