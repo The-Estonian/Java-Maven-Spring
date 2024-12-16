@@ -12,7 +12,13 @@ public class GuessingGame {
             return String.format("You won with %s tries left!", 4 - counter);
         } else {
             counter++;
-            return String.format("You didn't get it and you have %s tries left.", 4 - counter);
+            String highLow = "";
+            if (num < getRandomNumber()){
+                highLow = "low";
+            } else {
+                highLow = "high";
+            }
+            return String.format("You didn't get it and you have %d tries left. The number was too %s", 4 - counter, highLow);
         }
 
     }
