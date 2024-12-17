@@ -1,0 +1,8 @@
+package com.oop2;
+
+public enum Suit {
+    CLUBS,
+    DIAMONDS,
+    HEARTS,
+    SPADES;
+}
