@@ -1,10 +1,10 @@
 package com.oop2;
 
 public enum Suit {
-    CLUBS('♣'),
-    DIAMONDS('♦'),
-    HEARTS('♥'),
-    SPADES('♠');
+    CLUBS('\u2663'),
+    DIAMONDS('\u2666'),
+    HEARTS('\u2665'),
+    SPADES('\u2660');
 
     private char symbol;
 

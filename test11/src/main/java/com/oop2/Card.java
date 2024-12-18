@@ -9,6 +9,11 @@ public class Card {
         this.rank = rank;
     }
 
+    public Card(String suit, String rank) {
+        this.suit = Suit.valueOf(suit.toUpperCase());
+        this.rank = Rank.valueOf(rank.toUpperCase());
+    }
+
     public Suit getSuit() {
         return suit;
     }
@@ -25,15 +30,22 @@ public class Card {
         this.rank = rank;
     }
 
-    
+    @Override
+    public String toString() {
+        return String.format("%s %s", this.rank.toString(), this.suit.toString());
+    }
 
     public static void main(String[] args) {
-        Card card1 = new Card(Suit.CLUBS, Rank.TWO); // süda
-        Card card2 = new Card(Suit.CLUBS, Rank.THREE); // risti
 
-        Card card3 = new Card(Suit.DIAMONDS, Rank.FOUR); // ärtu
-        Card card4 = new Card(Suit.SPADES, Rank.FIVE); // poti
+        Card card1 = new Card(Suit.CLUBS, Rank.JACK);
+        Card card2 = new Card("spades", "queen");
 
+        Card card3 = new Card(Suit.DIAMONDS, Rank.FOUR);
+        Card card4 = new Card(Suit.SPADES, Rank.FIVE);
+        System.out.println(card1);
+        System.out.println(card2);
+        System.out.println(card3);
+        System.out.println(card4);
     }
 
 }
