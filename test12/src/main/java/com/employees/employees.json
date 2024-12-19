@@ -1,0 +1,80 @@
+{
+  "1": {
+    "lastname": "Flinstone",
+    "firstname": "Fred",
+    "dob": "1/1/1900",
+    "role": "Programmer",
+    "details": {
+      "locpd": 2000,
+      "yoe": 10,
+      "iq": 140
+    }
+  },
+  "2": {
+    "lastname": "Flinstone2",
+    "firstname": "Fred2",
+    "dob": "1/1/1900",
+    "role": "Programmer",
+    "details": {
+      "locpd": 1300,
+      "yoe": 14,
+      "iq": 100
+    }
+  },
+  "3": {
+    "lastname": "Rubble",
+    "firstname": "Barney",
+    "dob": "2/2/1905",
+    "role": "Manager",
+    "details": {
+      "orgSize": 300,
+      "dr": 10
+    }
+  },
+  "4": {
+    "lastname": "Rubble2",
+    "firstname": "Barney2",
+    "dob": "2/2/1905",
+    "role": "Manager",
+    "details": {
+      "orgSize": 100,
+      "dr": 4
+    }
+  },
+  "5": {
+    "lastname": "Flinstone",
+    "firstname": "Wilma",
+    "dob": "3/3/1910",
+    "role": "Analyst",
+    "details": {
+      "projectCount": 3
+    }
+  },
+  "6": {
+    "lastname": "Flinstone2",
+    "firstname": "Wilma2",
+    "dob": "3/3/1910",
+    "role": "Analyst",
+    "details": {
+      "projectCount": 5
+    }
+  },
+  "7": {
+    "lastname": "Rubble",
+    "firstname": "Betty",
+    "dob": "4/4/1915",
+    "role": "CEO",
+    "details": {
+      "avgStockPrice": 300
+    }
+  },
+  "8": {
+    "lastname": "Rubble2",
+    "firstname": "Betty2",
+    "dob": "4/4/1915",
+    "role": "CEO",
+    "details": {
+      "avgStockPrice": 200
+    }
+  }
+}
