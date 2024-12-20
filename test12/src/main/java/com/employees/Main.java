@@ -55,11 +55,17 @@ public class Main {
                 }
                 if (role.contains("Analyst")) {
                     int projCount = details.optInt("projectCount", 0);
-
+                    Analyst analyst = new Analyst(firstname, lastname, dateOfBirth, projCount);
+                    analyst.setSalary(2200);
+                    totalSalaries += 2200;
+                    System.out.println(analyst);
                 }
                 if (role.contains("CEO")) {
                     int avgStockPrice = details.optInt("avgStockPrice", 0);
-
+                    CEO ceo = new CEO(firstname, lastname, dateOfBirth, avgStockPrice);
+                    ceo.setSalary(5000);
+                    totalSalaries += 5000;
+                    System.out.println(ceo);
                 }
 
             }
