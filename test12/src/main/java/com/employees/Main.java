@@ -6,7 +6,9 @@ import java.nio.file.Path;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.Iterator;
 
 import org.json.JSONObject;
@@ -30,12 +32,12 @@ public class Main {
                 String lastname = person.optString("lastname", "Unknown");
                 String dob = person.optString("dob", "Unknown");
                 String role = person.optString("role", "Unknown");
-                Date dateOfBirth = new Date();
                 JSONObject details = person.optJSONObject("details");
+                LocalDate dateOfBirth = null;
                 try {
-                    SimpleDateFormat dateFormat = new SimpleDateFormat("M/d/yyyy");
-                    dateOfBirth = dateFormat.parse(dob);
-                } catch (ParseException e) {
+                    DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("M/d/yyyy");
+                    dateOfBirth = LocalDate.parse(dob, dateFormat);
+                } catch (DateTimeParseException e) {
                     System.out.println("Invalid date format: " + e.getMessage());
                 }
                 employee = switch (role) {

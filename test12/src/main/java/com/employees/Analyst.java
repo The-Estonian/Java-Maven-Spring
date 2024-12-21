@@ -1,15 +1,11 @@
 package com.employees;
 
-import java.util.Date;
+import java.time.LocalDate;
 
-public class Analyst implements Employee {
-    String firstName;
-    String lastName;
-    Date dob;
-    int salary;
+public class Analyst extends Person implements Employee {
     int projectCount;
 
-    public Analyst(String firstName, String lastName, Date dob, int salary, int projectCount) {
+    public Analyst(String firstName, String lastName, LocalDate dob, int salary, int projectCount) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
@@ -41,11 +37,11 @@ public class Analyst implements Employee {
         this.lastName = lastName;
     }
 
-    public Date getDob() {
+    public LocalDate getDob() {
         return dob;
     }
 
-    public void setDob(Date dob) {
+    public void setDob(LocalDate dob) {
         this.dob = dob;
     }
 
