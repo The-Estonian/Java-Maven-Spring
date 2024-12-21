@@ -2,7 +2,7 @@ package com.employees;
 
 import java.util.Date;
 
-public class Manager {
+public class Manager implements Employee {
     String firstName;
     String lastName;
     Date dob;
@@ -10,10 +10,13 @@ public class Manager {
     int organizationSize;
     int dr;
 
-    public Manager(String firstName, String lastName, Date dob) {
+    public Manager(String firstName, String lastName, Date dob, int salary, int organizationSize, int dr) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
+        this.salary = salary;
+        this.organizationSize = organizationSize;
+        this.dr = dr;
     }
 
     public String getFirstName() {
@@ -76,6 +79,5 @@ public class Manager {
                 DR: %s
                 """, firstName, lastName, dob, salary, organizationSize, dr);
     }
-    
 
 }

@@ -2,16 +2,17 @@ package com.employees;
 
 import java.util.Date;
 
-public class Programmer {
+public class Programmer implements Employee {
     String firstName;
     String lastName;
     Date dob;
     int salary;
 
-    public Programmer(String firstName, String lastName, Date dob) {
+    public Programmer(String firstName, String lastName, Date dob, int salary) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
+        this.salary = salary;
     }
 
     public String getFirstName() {

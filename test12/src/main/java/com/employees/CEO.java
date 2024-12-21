@@ -2,17 +2,18 @@ package com.employees;
 
 import java.util.Date;
 
-public class CEO {
+public class CEO implements Employee {
     String firstName;
     String lastName;
     Date dob;
     int salary;
     int avgStockPrice;
 
-    public CEO(String firstName, String lastName, Date dob, int avgStockPrice) {
+    public CEO(String firstName, String lastName, Date dob, int salary, int avgStockPrice) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.dob = dob;
+        this.salary = salary;
         this.avgStockPrice = avgStockPrice;
     }
 
@@ -68,5 +69,4 @@ public class CEO {
                 """, firstName, lastName, dob, salary, avgStockPrice);
     }
 
-    
 }
