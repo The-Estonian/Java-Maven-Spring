@@ -2,14 +2,14 @@ package com.employees;
 
 import java.time.LocalDate;
 
+import org.json.JSONObject;
+
 public class Manager extends Person implements Employee {
     int organizationSize;
     int dr;
 
-    public Manager(String firstName, String lastName, LocalDate dob, int salary, int organizationSize, int dr) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dob = dob;
+    public Manager(JSONObject person, int salary, int organizationSize, int dr) {
+        super(person);
         this.salary = salary;
         this.organizationSize = organizationSize;
         this.dr = dr;

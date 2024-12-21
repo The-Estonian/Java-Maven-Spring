@@ -2,13 +2,13 @@ package com.employees;
 
 import java.time.LocalDate;
 
+import org.json.JSONObject;
+
 public class Analyst extends Person implements Employee {
     int projectCount;
 
-    public Analyst(String firstName, String lastName, LocalDate dob, int salary, int projectCount) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dob = dob;
+    public Analyst(JSONObject person, int salary, int projectCount) {
+        super(person);
         this.salary = salary;
         this.projectCount = projectCount;
     }

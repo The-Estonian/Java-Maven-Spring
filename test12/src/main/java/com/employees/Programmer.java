@@ -3,12 +3,12 @@ package com.employees;
 import java.time.LocalDate;
 import java.util.Date;
 
+import org.json.JSONObject;
+
 public class Programmer extends Person implements Employee {
 
-    public Programmer(String firstName, String lastName, LocalDate dob, int salary) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.dob = dob;
+    public Programmer(JSONObject person, int salary) {
+        super(person);
         this.salary = salary;
     }
 

@@ -27,36 +27,28 @@ public class Main {
             while (keys.hasNext()) {
                 String key = keys.next();
                 JSONObject person = jsonObject.getJSONObject(key);
-
-                String firstname = person.optString("firstname", "Unknown");
-                String lastname = person.optString("lastname", "Unknown");
-                String dob = person.optString("dob", "Unknown");
                 String role = person.optString("role", "Unknown");
                 JSONObject details = person.optJSONObject("details");
-                LocalDate dateOfBirth = null;
-                try {
-                    DateTimeFormatter dateFormat = DateTimeFormatter.ofPattern("M/d/yyyy");
-                    dateOfBirth = LocalDate.parse(dob, dateFormat);
-                } catch (DateTimeParseException e) {
-                    System.out.println("Invalid date format: " + e.getMessage());
-                }
+
                 employee = switch (role) {
-                    case "Programmer" -> new Programmer(firstname, lastname, dateOfBirth, 2300);
+                    case "Programmer" -> new Programmer(person, 2300);
                     case "Manager" -> {
                         int orgSize = details.optInt("orgSize", 0);
                         int dr = details.optInt("dr", 0);
-                        yield new Manager(firstname, lastname, dateOfBirth, 2500, orgSize, dr);
+                        yield new Manager(person, 2500, orgSize, dr);
                     }
                     case "Analyst" -> {
                         int projCount = details.optInt("projectCount", 0);
-                        yield new Analyst(firstname, lastname, dateOfBirth, 2200, projCount);
+                        yield new Analyst(person, 2200, projCount);
                     }
                     case "CEO" -> {
                         int avgStockPrice = details.optInt("avgStockPrice", 0);
-                        yield new CEO(firstname, lastname, dateOfBirth, 5000, avgStockPrice);
+                        yield new CEO(person, 5000, avgStockPrice);
                     }
                     default -> null;
                 };
+                System.out.println(
+                        employee.toString());
                 totalSalaries += employee.getSalary();
             }
         } catch (IOException e) {
