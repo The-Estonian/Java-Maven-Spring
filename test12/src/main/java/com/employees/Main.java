@@ -4,11 +4,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.text.NumberFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.time.format.DateTimeParseException;
 import java.util.Iterator;
 
 import org.json.JSONObject;
@@ -17,12 +12,13 @@ public class Main {
     public static void main(String[] args) {
         int totalSalaries = 0;
         try {
-            System.out.println("Current working directory: " + System.getProperty("user.dir"));
+            // read file
             String people = new String(
                     Files.readAllBytes(Path.of("test12/src/main/java/com/employees/employees.json")));
             JSONObject jsonObject = new JSONObject(people);
             Iterator<String> keys = jsonObject.keys();
 
+            // iterate over rows
             Employee employee = null;
             while (keys.hasNext()) {
                 String key = keys.next();
@@ -30,6 +26,7 @@ public class Main {
                 String role = person.optString("role", "Unknown");
                 JSONObject details = person.optJSONObject("details");
 
+                // Create employee classes
                 employee = switch (role) {
                     case "Programmer" -> new Programmer(person, 2300);
                     case "Manager" -> {
@@ -49,6 +46,8 @@ public class Main {
                 };
                 System.out.println(
                         employee.toString());
+
+                // Call employee salary and yield it
                 totalSalaries += employee.getSalary();
             }
         } catch (IOException e) {
@@ -58,6 +57,5 @@ public class Main {
         NumberFormat currencyInstance = NumberFormat
                 .getCurrencyInstance();
         System.out.println(currencyInstance.format(totalSalaries));
-
     }
 }

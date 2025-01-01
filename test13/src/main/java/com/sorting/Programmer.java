@@ -1,13 +1,17 @@
-package com.employees;
+package com.sorting;
 
 import java.time.LocalDate;
 
-import org.json.JSONObject;
+public class Programmer {
+    private String firstName;
+    private String lastName;
+    private LocalDate dob;
+    private int salary;
 
-public class Programmer extends Person implements Employee {
-
-    public Programmer(JSONObject person, int salary) {
-        super(person);
+    public Programmer(String firstName, String lastName, LocalDate dob, int salary) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.dob = dob;
         this.salary = salary;
     }
 
@@ -46,12 +50,10 @@ public class Programmer extends Person implements Employee {
     @Override
     public String toString() {
         return String.format("""
-                Programmer
                 First name: %s
                 Last name: %s
                 Date of Birth: %s
-                Salary:%s
-                """, firstName, lastName, dob, salary);
+                Salary: %s""", firstName, lastName, dob, salary);
     }
 
 }

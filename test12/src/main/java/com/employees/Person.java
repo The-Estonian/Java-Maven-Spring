@@ -6,7 +6,7 @@ import java.time.format.DateTimeParseException;
 
 import org.json.JSONObject;
 
-public class Person {
+public abstract class Person {
     protected String firstName;
     protected String lastName;
     protected LocalDate dob;
